@@ -6,7 +6,7 @@ import {Box} from '@chakra-ui/react';
 function App() {
   return (
     <>
-    <Box>
+    <Box pb="2pc">
       <Navbar/>
       <Box1/>
     </Box>

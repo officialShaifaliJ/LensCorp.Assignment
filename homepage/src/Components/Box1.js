@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Heading, Text, Button, Image } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, Image, Flex } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 
 function Box1() {
   return (
@@ -33,7 +34,7 @@ function Box1() {
           <Heading
             fontSize="60px"
             size="lg"
-            alignItems={"center"}
+            align={"center"}
             borderBottom={"3px solid lightskyblue"}
             fontWeight="600px"
             p="0.5pc"
@@ -53,12 +54,7 @@ function Box1() {
           borderRadius={"1pc"}
         >
           <Box w="40%" mt="30px">
-            <Heading
-              fontSize="40px"
-              size="lg"
-              alignItems={"center"}
-              fontWeight="600px"
-            >
+            <Heading fontSize="40px" size="lg" fontWeight="600px">
               Welcome to LENS
             </Heading>
             <Text fontSize="25px" mt="10px">
@@ -83,12 +79,11 @@ function Box1() {
       </Box>
 
       <Box bgColor={"#EBF8FF"}>
-
         <Box w="8%" margin={"auto"} pt="20px">
           <Text
             fontSize="20px"
             size="lg"
-            alignItems={"center"}
+            align={"center"}
             borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
@@ -107,7 +102,7 @@ function Box1() {
           <Heading
             fontSize="60px"
             fontWeight="600px"
-            alignContent="center"
+            align="center"
             p="0.5pc"
             margin={"auto"}
             justifyContent="center"
@@ -143,7 +138,7 @@ function Box1() {
               color="lightgray"
             >
               <Text fontSize="80px">01</Text>
-              <Text fontSize="40px" color="#68D391">
+              <Text fontWeight="600" fontSize="40px" color="#68D391">
                 Biomertics
               </Text>
             </Heading>
@@ -181,7 +176,7 @@ function Box1() {
               color="lightgray"
             >
               <Text fontSize="80px">02</Text>
-              <Text fontSize="40px" color="#63B3ED">
+              <Text fontWeight="600" fontSize="40px" color="#63B3ED">
                 Image Analysis
               </Text>
             </Heading>
@@ -274,18 +269,17 @@ function Box1() {
               internet connection.
             </Heading>
           </Box>
-
         </Box>
-
       </Box>
 
-      <Box>
+      <Box position="relative" overflow="hidden" width="100%" height="100%">
+        {/* Content */}
 
-        <Box w="9%" margin={"auto"} pt="20px">
+        <Box w="18%" margin={"auto"} pt="20px">
           <Text
             fontSize="25px"
             size="lg"
-            alignItems={"center"}
+            align={"center"}
             borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
@@ -293,6 +287,210 @@ function Box1() {
           </Text>
         </Box>
 
+        <Box
+          w="58%"
+          margin={"auto"}
+          mt="1pc"
+          pt="20px"
+          border={"0px solid black"}
+        >
+          <Heading fontSize="60px" fontWeight="600px" align="center" p="0.5pc">
+            AI-driven solutions backed by science
+          </Heading>
+
+          <Text
+            mt="1pc"
+            fontSize="22px"
+            fontWeight="500"
+            color="grey"
+            align="center"
+          >
+            Every piece of AI technology shipped from LENS is thoroughly
+            benchmarked via rigorous evaluations. With a global network of
+            experts and academicians, we guarantee the most accurate and robust
+            solutions in the market.
+          </Text>
+
+          <Box
+            display="grid"
+            mt="1pc"
+            gridTemplateColumns="repeat(2,1fr)"
+            gap="3pc"
+          >
+            <Box>
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  State-of-the-art solutions
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  Fast & Efficient
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  No extra computation fee
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  No licensing fee
+                </Text>
+              </Flex>
+            </Box>
+
+            <Box>
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  Lifetime support & upgrades
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  Plug-and-Play
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  24x7 Progress Monitoring
+                </Text>
+              </Flex>
+
+              <Flex gap="0.7pc" alignItems="center">
+                <CheckIcon />
+                <Text fontSize="20px" fontWeight="500">
+                  Incremental Updates
+                </Text>
+              </Flex>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box>
+          <Box
+            display="grid"
+            gap="1pc"
+            gridTemplateColumns="repeat(4,1fr)"
+            bgColor="#f0fcfc"
+            p="1pc"
+            py="3pc"
+            my="2.5pc"
+          >
+            <Box
+              p="1pc"
+              bgColor="white"
+              borderRadius="1pc"
+              className=""
+              _hover={{
+                border: "1px solid #68D391",
+                transition: "ease-in-out 1s",
+                bgColor: "#F0FFF4",
+              }}
+            >
+              <Text fontSize="35px" fontWeight="600">
+                Exclusive Rights
+              </Text>
+              <Image
+                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgreen.e71c8735.png&w=256&q=75"
+                margin={"auto"}
+                my="1pc"
+              />
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                Our mission is to make an impact in empowering human society
+                with AI. Hence, all Intellectual Property Rights belongs to you.
+              </Text>
+            </Box>
+
+            <Box
+              p="1pc"
+              bgColor="white"
+              borderRadius="1pc"
+              className=""
+              _hover={{
+                border: "1px solid #63B3ED",
+                transition: "ease-in-out 1s",
+                bgColor: "#EBF8FF",
+              }}
+            >
+              <Text fontSize="35px" fontWeight="600">
+                Research Driven
+              </Text>
+              <Image
+                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblue.f22859fe.png&w=256&q=75"
+                margin={"auto"}
+                my="1pc"
+              />
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                We regularly benchmark our solutions via comparing industry-vide
+                evaluations so our partners only get the best that AI can offer.
+              </Text>
+            </Box>
+
+            <Box
+              p="1pc"
+              bgColor="white"
+              borderRadius="1pc"
+              className=""
+              _hover={{
+                border: "1px solid #F687B3",
+                transition: "ease-in-out 1s",
+                bgColor: "#FFF5F7",
+              }}
+            >
+              <Text fontSize="35px" fontWeight="600">
+                Plug-and-Play
+              </Text>
+              <Image
+                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fred.a7efdb29.png&w=128&q=75"
+                margin={"auto"}
+                my="1pc"
+              />
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                We provide AI-driven solutions into businesses where they can
+                bring tangible value. Each solution is customized as per your
+                needs and deployed on any computing device of your choice.
+              </Text>
+            </Box>
+
+            <Box
+              p="1pc"
+              bgColor="white"
+              borderRadius="1pc"
+              className=""
+              _hover={{
+                border: "1px solid #FC8181",
+                transition: "ease-in-out 1s",
+                bgColor: "#FFFAF0",
+              }}
+            >
+              <Text fontSize="35px" fontWeight="600">
+                Lifetime Support
+              </Text>
+              <Image
+                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fyellow.d937d179.png&w=256&q=75"
+                margin={"auto"}
+                my="1pc"
+              />
+              <Text fontSize="18px" color="grey" p="0.5pc" lineHeight="1.8pc">
+                Should you face any issues, we are always at your service. We
+                provide lifetime technical support & upgrade options.
+              </Text>
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </>
   );
