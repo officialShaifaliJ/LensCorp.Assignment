@@ -6,6 +6,7 @@ import {
   Button,
   Image,
   Flex,
+  Input,
   Avatar,
 } from "@chakra-ui/react";
 import { CheckIcon, AtSignIcon, SunIcon } from "@chakra-ui/icons";
@@ -644,7 +645,7 @@ function Box1() {
           gap="1pc"
         >
           <Box borderRadius="0.5pc" p="2pc" bgColor="white">
-          <Text fontSize="20px" my='1pc'fontWeight="500px" color='red'>
+            <Text fontSize="20px" my="1pc" fontWeight="500px" color="red">
               New!
             </Text>
             <Text fontSize="30px" fontWeight="500px">
@@ -669,8 +670,8 @@ function Box1() {
             </Button>
           </Box>
           <Box borderRadius="0.5pc" p="2pc" bgColor="white">
-          <Text fontSize="20px" my='1pc'fontWeight="500px">
-              April 25, 2024 
+            <Text fontSize="20px" my="1pc" fontWeight="500px">
+              April 25, 2024
             </Text>
             <Text fontSize="30px" fontWeight="500px">
               The Evolution of AI in Games
@@ -701,12 +702,12 @@ function Box1() {
             gridRow={"2/4"}
             gridColumn={"1/3"}
           >
-            <Text fontSize="20px" my='1pc'fontWeight="500px">
-              April 18, 2024 
+            <Text fontSize="20px" my="1pc" fontWeight="500px">
+              April 18, 2024
             </Text>
             <Text fontSize="30px" fontWeight="500px">
-              Unmasking the Misconceptions of Artificial
-              Intelligence in the Workplace
+              Unmasking the Misconceptions of Artificial Intelligence in the
+              Workplace
             </Text>
             <Box
               borderRadius="1pc"
@@ -728,7 +729,35 @@ function Box1() {
         </Box>
       </Box>
 
-      
+      <Box display="flex" justifyContent={"space-between"} gap="3pc" p="3pc">
+        <Box>
+          <Heading w="50%" size="lg" fontSize="65px" mt="3pc">
+            Get in touch with us
+          </Heading>
+          <Text mt="2pc" fontSize="22px" fontWeight="400">
+            Send your enquiry now!
+          </Text>
+          <Box display="flex" my="2pc">
+            <Input placeholder="Enter Email Address" border="1px solid black" />
+            <Button
+              borderRadius={"lg"}
+              border="1px solid black"
+              bgColor="black"
+              color="white"
+              _hover={{bgColor:'black',color:'white'}}
+            >
+              Request Demo
+            </Button>
+          </Box>
+        </Box>
+        <Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75" />
+      </Box>
+
+      <Box display={'flex'} justifyContent={'space-between'} bgColor='#2A4365' p='2.5pc' color='lightgrey'>
+         <Heading fontSize='18px' fontWeight={'500'}>2023 LENS, Inc. All rights reserved.</Heading>
+         <Heading fontSize='18px' fontWeight={'500'}>Code of conduct{" "} 
+         Sustainability Goals</Heading>
+      </Box>
     </>
   );
 }
