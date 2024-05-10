@@ -1,6 +1,17 @@
 import React from "react";
-import { Box, Heading, Text, Button, Image, Flex } from "@chakra-ui/react";
-import { CheckIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Heading,
+  Text,
+  Button,
+  Image,
+  Flex,
+  Avatar,
+} from "@chakra-ui/react";
+import { CheckIcon, AtSignIcon, SunIcon } from "@chakra-ui/icons";
+import { FaPeopleLine } from "react-icons/fa6";
+import { IoMdWifi } from "react-icons/io";
+import { PiBezierCurveThin } from "react-icons/pi";
 
 function Box1() {
   return (
@@ -15,7 +26,7 @@ function Box1() {
         mt="3pc"
         h="80vh"
       >
-        <Box w="40%" p={6} ml="10pc" pt="5pc">
+        <Box w="40%" p={6} ml="10pc" pt="5pc" color="black">
           <Heading size="lg" fontSize="60px" fontWeight="600px">
             We are at the forefront of AI
           </Heading>
@@ -29,7 +40,7 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box bgColor="#FAF5FF" h="auto" p="1pc" pb="2.5pc">
+      <Box h="auto" p="1pc" pb="2.5pc">
         <Box w="22%" margin={"auto"}>
           <Heading
             fontSize="60px"
@@ -53,7 +64,7 @@ function Box1() {
           p="2pc"
           borderRadius={"1pc"}
         >
-          <Box w="40%" mt="30px">
+          <Box w="40%" mt="30px" color="black">
             <Heading fontSize="40px" size="lg" fontWeight="600px">
               Welcome to LENS
             </Heading>
@@ -62,7 +73,7 @@ function Box1() {
               custom AI - powered solutions for your business so you don't have
               to.
             </Text>
-            <Button border="1px solid black" mt="10px">
+            <Button border="1px solid black" mt="10px" color="black">
               Learn More
             </Button>
           </Box>
@@ -78,7 +89,7 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box bgColor={"#EBF8FF"}>
+      <Box bgColor={"#EBF8FF"} color="black">
         <Box w="8%" margin={"auto"} pt="20px">
           <Text
             fontSize="20px"
@@ -272,7 +283,7 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box position="relative" overflow="hidden" width="100%" height="100%">
+      <Box>
         {/* Content */}
 
         <Box w="18%" margin={"auto"} pt="20px">
@@ -301,7 +312,7 @@ function Box1() {
           <Text
             mt="1pc"
             fontSize="22px"
-            fontWeight="500"
+            fontWeight="400"
             color="grey"
             align="center"
           >
@@ -400,7 +411,7 @@ function Box1() {
                 bgColor: "#F0FFF4",
               }}
             >
-              <Text fontSize="35px" fontWeight="600">
+              <Text fontSize="35px" fontWeight="600" color="black">
                 Exclusive Rights
               </Text>
               <Image
@@ -425,7 +436,7 @@ function Box1() {
                 bgColor: "#EBF8FF",
               }}
             >
-              <Text fontSize="35px" fontWeight="600">
+              <Text fontSize="35px" fontWeight="600" color="black">
                 Research Driven
               </Text>
               <Image
@@ -450,7 +461,7 @@ function Box1() {
                 bgColor: "#FFF5F7",
               }}
             >
-              <Text fontSize="35px" fontWeight="600">
+              <Text fontSize="35px" fontWeight="600" color="black">
                 Plug-and-Play
               </Text>
               <Image
@@ -476,7 +487,7 @@ function Box1() {
                 bgColor: "#FFFAF0",
               }}
             >
-              <Text fontSize="35px" fontWeight="600">
+              <Text fontSize="35px" fontWeight="600" color="black">
                 Lifetime Support
               </Text>
               <Image
@@ -492,6 +503,232 @@ function Box1() {
           </Box>
         </Box>
       </Box>
+
+      <Box>
+        {/* Content */}
+
+        <Box w="15%" margin={"auto"} pt="20px" my="3pc">
+          <Text
+            fontSize="25px"
+            size="lg"
+            align={"center"}
+            borderBottom={"3px solid lightskyblue"}
+            p="0.5pc"
+          >
+            OUR VISION
+          </Text>
+        </Box>
+        <Box w="60%" margin="auto">
+          {" "}
+          <Heading fontSize="65px" fontWeight="600px" align="center" p="1pc">
+            AI for Social Good
+          </Heading>
+          <Text
+            mt="1pc"
+            fontSize="22px"
+            fontWeight="400"
+            color="grey"
+            align="center"
+          >
+            Explainable AI (XAI) is an emerging subject of machine learning
+            research that refers to strategies that try to provide transparency
+            to typically opaque AI models and their predictions.
+          </Text>
+        </Box>
+        <Box w="70%" display="flex" m="auto" mt="3pc">
+          <Box
+            // borderRight="2px dashed black"
+            w="100%"
+            display="grid"
+            pr="1pc"
+            gridTemplateColumns="repeat(2, 1fr)"
+            gridTemplateRows="repeat(3, 1fr)"
+            justifyContent="space-between"
+            mb="3pc"
+          >
+            <Box
+              // align="left"
+              gridRow="1 / 2"
+              gridColumn="1 / 2"
+              borderRight="2px dashed grey"
+              p="1pc"
+            >
+              {" "}
+              <Avatar
+                bg="black"
+                icon={<FaPeopleLine fontSize="2pc" />}
+                m="auto"
+              />
+              <Heading>Diversity & Fairness</Heading>
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                When training our AI models, we consider ethical and social
+                implications of algorithm-based decision making. Our solutions
+                use high-quality and fairly-represented data sets to eliminate
+                human cognitive biases.
+              </Text>
+            </Box>
+
+            <Box
+              gridRow="2 / 3"
+              gridColumn="2 / 3"
+              borderLeft="2px dashed grey"
+              p="1pc"
+              my="0.5pc"
+            >
+              {" "}
+              <Avatar
+                bg="black"
+                icon={<IoMdWifi fontSize={"2pc"} />}
+                m="auto"
+              />
+              <Heading>Regulatory Compliance</Heading>
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                Working with clients globally, LENS acknowledges applicable data
+                privacy regulations, such as the GDPR, HIPAA and others, in all
+                our solutions handling sensitive data. We also ensure our
+                algorithms allow for the required level of decision-making
+                transparency and explainability.
+              </Text>
+            </Box>
+
+            <Box
+              // align="center"
+              gridRow="3 / 4"
+              gridColumn="1 / 2"
+              borderRight="2px dashed grey"
+              p="1pc"
+            >
+              {" "}
+              <Avatar
+                bg="black"
+                icon={<PiBezierCurveThin fontSize={"2pc"} />}
+                m="auto"
+              />
+              <Heading>Code of Ethics</Heading>
+              <Text fontSize="18px" color="grey" p="0.5pc">
+                LENS believes in a just, non-violent world of equality and
+                fairness. We prize democratic values, civil liberties and open
+                and informed debate. When used to further these values,
+                algorithm-based decision-making models can continue to make the
+                world a safer, better place for everyone.
+              </Text>
+            </Box>
+          </Box>
+          {/* <Box borderLeft="2px dashed black" w="50%"></Box> */}
+        </Box>
+      </Box>
+
+      <Box my="2pc" bgColor="#FFF5F7" color="black" p="2pc">
+        <Box w="18%" margin={"auto"} pt="20px">
+          <Text
+            fontSize="25px"
+            size="lg"
+            align={"center"}
+            borderBottom={"3px solid lightskyblue"}
+            p="0.5pc"
+          >
+            WHY CHOOSE LENS
+          </Text>
+        </Box>
+        <Box w="60%" margin="auto">
+          {" "}
+          <Heading fontSize="65px" fontWeight="600px" align="center" p="1pc">
+            Inhouse Mindscape
+          </Heading>
+        </Box>
+        <Box
+          w="80%"
+          display="grid"
+          margin="auto"
+          gridTemplateColumns={"repeat(2,1fr)"}
+          gap="1pc"
+        >
+          <Box borderRadius="0.5pc" p="2pc" bgColor="white">
+          <Text fontSize="20px" my='1pc'fontWeight="500px" color='red'>
+              New!
+            </Text>
+            <Text fontSize="30px" fontWeight="500px">
+              Generative AI
+            </Text>
+            <Box
+              borderRadius="1pc"
+              fontSize={"20px"}
+              p="2pc"
+              bgColor="#FFFAF0"
+              my="1pc"
+            >
+              <Text>
+                In today's data-driven marketing world, keeping up with content
+                creation demands can be a challenge. Read our latest blog to
+                explore the power of Generative AI and its potential to reshape
+                the marketing landscape....
+              </Text>
+            </Box>
+            <Button color="red" border="0px" bgColor="white">
+              Read More{" "}
+            </Button>
+          </Box>
+          <Box borderRadius="0.5pc" p="2pc" bgColor="white">
+          <Text fontSize="20px" my='1pc'fontWeight="500px">
+              April 25, 2024 
+            </Text>
+            <Text fontSize="30px" fontWeight="500px">
+              The Evolution of AI in Games
+            </Text>
+            <Box
+              borderRadius="1pc"
+              p="2pc"
+              fontSize={"20px"}
+              bgColor="#EBF8FF"
+              my="1pc"
+            >
+              <Text>
+                The integration of artificial intelligence (AI) within the
+                gaming industry has been a remarkable journey, marked by
+                continual innovation. Read our latest blog to dive deep into the
+                evolution that continues to shape the future of play!...
+              </Text>
+            </Box>
+            <Button color="red" border="0px" bgColor="white">
+              Read More{" "}
+            </Button>
+          </Box>
+
+          <Box
+            borderRadius="0.5pc"
+            p="2pc"
+            bgColor="white"
+            gridRow={"2/4"}
+            gridColumn={"1/3"}
+          >
+            <Text fontSize="20px" my='1pc'fontWeight="500px">
+              April 18, 2024 
+            </Text>
+            <Text fontSize="30px" fontWeight="500px">
+              Unmasking the Misconceptions of Artificial
+              Intelligence in the Workplace
+            </Text>
+            <Box
+              borderRadius="1pc"
+              p="2pc"
+              fontSize={"20px"}
+              bgColor="#FFF5F7"
+              my="1pc"
+            >
+              <Text>
+                The rise of Artificial Intelligence (AI) has sparked both
+                excitement and apprehension. Many professionals are unsure how
+                AI impacts their work....
+              </Text>
+            </Box>
+            <Button color="red" border="0px" bgColor="white">
+              Read More{" "}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+
+      
     </>
   );
 }
