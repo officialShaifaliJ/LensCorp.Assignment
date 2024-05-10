@@ -82,16 +82,17 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box  bgColor={'#EBF8FF'}>
-        <Box w="12%" margin={"auto"} pt="20px">
+      <Box bgColor={"#EBF8FF"}>
+
+        <Box w="8%" margin={"auto"} pt="20px">
           <Text
-            fontSize="40px"
+            fontSize="20px"
             size="lg"
             alignItems={"center"}
             borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
-            Services
+            SERVICES
           </Text>
         </Box>
 
@@ -115,16 +116,26 @@ function Box1() {
           </Heading>
         </Box>
 
-        <Box display='grid' gridTemplateColumns={'repeat(2,1fr)'} w='75%'  margin='auto' gap='3pc' p='1pc'mt='3pc'>
-
-        <Box p='1pc' bgColor='white'
-          borderRadius='1pc'
-          className=""
-          _hover={{
-            border:"1px solid #68D391",
-            transition:"ease-in-out 1s",
-            bgColor:"#F0FFF4"
-          }}>
+        <Box
+          display="grid"
+          gridTemplateColumns={"repeat(2,1fr)"}
+          w="75%"
+          margin="auto"
+          gap="3pc"
+          p="1pc"
+          mt="3pc"
+        >
+          <Box
+            p="1pc"
+            bgColor="white"
+            borderRadius="1pc"
+            className=""
+            _hover={{
+              border: "1px solid #68D391",
+              transition: "ease-in-out 1s",
+              bgColor: "#F0FFF4",
+            }}
+          >
             <Heading
               display="flex"
               justifiyContent="center"
@@ -143,7 +154,7 @@ function Box1() {
               p="0.5pc"
               margin={"auto"}
               justifyContent="center"
-              lineHeight='2pc'
+              lineHeight="2pc"
             >
               Academia-backed & In-house researched State-of-the-Art Face,
               Fingerprint, and Iris Recognition SDKs. Enable real-time automated
@@ -152,14 +163,17 @@ function Box1() {
             </Heading>
           </Box>
 
-          <Box p='1pc' bgColor='white'
-          borderRadius='1pc'
-          className=""
-          _hover={{
-            border:"1px solid #63B3ED",
-            transition:"ease-in-out 1s",
-            bgColor:"#EBF8FF"
-          }}>
+          <Box
+            p="1pc"
+            bgColor="white"
+            borderRadius="1pc"
+            className=""
+            _hover={{
+              border: "1px solid #63B3ED",
+              transition: "ease-in-out 1s",
+              bgColor: "#EBF8FF",
+            }}
+          >
             <Heading
               display="flex"
               justifiyContent="center"
@@ -178,7 +192,7 @@ function Box1() {
               p="0.5pc"
               margin={"auto"}
               justifyContent="center"
-              lineHeight='2pc'
+              lineHeight="2pc"
             >
               Academia-backed & In-house researched State-of-the-Art Face,
               Fingerprint, and Iris Recognition SDKs. Enable real-time automated
@@ -187,22 +201,26 @@ function Box1() {
             </Heading>
           </Box>
 
-          <Box p='1pc' bgColor='white'
-          borderRadius='1pc'
-           _hover={{
-            border:"1px solid #FC8181",
-            transition:"ease-in-out 1s",
-            bgColor:"#FFF5F5"
-          }}
+          <Box
+            p="1pc"
+            bgColor="white"
+            borderRadius="1pc"
+            _hover={{
+              border: "1px solid #FC8181",
+              transition: "ease-in-out 1s",
+              bgColor: "#FFF5F5",
+            }}
           >
-
-            <Box
-              display="flex"
-              justifiyContent="center"
-              alignItems="baseline"
-            >
-              <Heading fontSize="80px" color="lightgray">03</Heading>
-              <Text fontWeight='600' fontSize="40px" color="#FC8181" pl={'0.1pc'}>
+            <Box display="flex" justifiyContent="center" alignItems="baseline">
+              <Heading fontSize="80px" color="lightgray">
+                03
+              </Heading>
+              <Text
+                fontWeight="600"
+                fontSize="40px"
+                color="#FC8181"
+                pl={"0.1pc"}
+              >
                 Cross-Media Transaction
               </Text>
             </Box>
@@ -213,7 +231,7 @@ function Box1() {
               p="0.5pc"
               margin={"auto"}
               justifyContent="center"
-              lineHeight='2pc'
+              lineHeight="2pc"
             >
               Academia-backed & In-house researched State-of-the-Art Face,
               Fingerprint, and Iris Recognition SDKs. Enable real-time automated
@@ -222,22 +240,22 @@ function Box1() {
             </Heading>
           </Box>
 
-
-          <Box p='1pc' bgColor='white'
-          borderRadius='1pc'
-          className=""
-          _hover={{
-            border:"1px solid #FC8181",
-            transition:"ease-in-out 1s",
-            bgColor:"#FFFAF0"
-          }}>
-            <Box
-              display="flex"
-              justifiyContent="center"
-              alignItems="baseline"
-            >
-              <Heading fontSize="80px" color="lightgray">04</Heading>
-              <Text fontWeight='600' fontSize="40px"  color="#F6AD55">
+          <Box
+            p="1pc"
+            bgColor="white"
+            borderRadius="1pc"
+            className=""
+            _hover={{
+              border: "1px solid #FC8181",
+              transition: "ease-in-out 1s",
+              bgColor: "#FFFAF0",
+            }}
+          >
+            <Box display="flex" justifiyContent="center" alignItems="baseline">
+              <Heading fontSize="80px" color="lightgray">
+                04
+              </Heading>
+              <Text fontWeight="600" fontSize="40px" color="#F6AD55">
                 3D Modelling and Design
               </Text>
             </Box>
@@ -248,7 +266,7 @@ function Box1() {
               p="0.5pc"
               margin={"auto"}
               justifyContent="center"
-              lineHeight='2pc'
+              lineHeight="2pc"
             >
               Academia-backed & In-house researched State-of-the-Art Face,
               Fingerprint, and Iris Recognition SDKs. Enable real-time automated
@@ -259,7 +277,22 @@ function Box1() {
 
         </Box>
 
-        <Box></Box>
+      </Box>
+
+      <Box>
+
+        <Box w="9%" margin={"auto"} pt="20px">
+          <Text
+            fontSize="25px"
+            size="lg"
+            alignItems={"center"}
+            borderBottom={"3px solid lightskyblue"}
+            p="0.5pc"
+          >
+            WHY CHOOSE LENS
+          </Text>
+        </Box>
+
       </Box>
     </>
   );
