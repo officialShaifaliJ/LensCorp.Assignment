@@ -1,21 +1,22 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-function Services({ t1, t2, content, color, colorMode }) {
+function Services({ t1, t2, content, color, colorMode,shadowcolor }) {
   const [mouseIn, setMouseIn] = useState(false);
+  const demo = colorMode === "light" ? "white" : "rgba(0, 0, 0, 0.24)"
   return (
     <>
       <Box
         p="1pc"
-        bgColor={colorMode === "light" ? "white" : ""}
-        borderRadius="1pc"
+        bgColor={`${demo}`}
+        borderRadius="1.5pc"
         className=""
         onMouseEnter={() => setMouseIn(true)}
         onMouseOut={() => setMouseIn(false)}
         _hover={{
-          border: `2px solid ${color}`,
+          border: `1px solid ${color}`,
           transition: "ease-in-out 1s",
-          //   bgColor: "#F0FFF4",
+          boxShadow:`inset -50px 20px 120px -36px ${shadowcolor}`
         }}
       >
         <Heading
@@ -44,7 +45,7 @@ function Services({ t1, t2, content, color, colorMode }) {
         <Heading
           fontSize="20px"
           alignContent="center"
-          color="lightgrey"
+          color="grey"
           p="0.5pc"
           fontWeight="500"
           margin={"auto"}

@@ -7,10 +7,8 @@ function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-    <Box>
       <Navbar colorMode={colorMode} toggleColorMode={toggleColorMode}/>
       <Box1 colorMode={colorMode} toggleColorMode={toggleColorMode}/>
-    </Box>
     </>
   );
 }

@@ -15,8 +15,7 @@ import { FaPeopleLine } from "react-icons/fa6";
 import { IoMdWifi } from "react-icons/io";
 import { PiBezierCurveThin } from "react-icons/pi";
 import BlogAnimation from "./BlogAnimation";
-import Services from './Services';
-
+import Services from "./Services";
 
 function Box1({ colorMode }) {
   const whyChooseLens = [
@@ -30,8 +29,8 @@ function Box1({ colorMode }) {
       t1: "April 25, 2024",
       t2: "The Evolution of AI in Games",
       content:
-      "In today's data-driven marketing world, keeping up with content creation demands can be a challenge. Read our latest blog to explore the power of Generative AI and its potential to reshape the marketing landscape....",
-       },
+        "In today's data-driven marketing world, keeping up with content creation demands can be a challenge. Read our latest blog to explore the power of Generative AI and its potential to reshape the marketing landscape....",
+    },
     {
       t1: "April 18, 2024",
       t2: "Unmasking the Misconceptions of Artificial Intelligence in the Workplace",
@@ -47,6 +46,7 @@ function Box1({ colorMode }) {
 
   const services = [
     {
+      shadowcolor: "#9AE6B4",
       color: "#68D391",
       t1: "01",
       t2: "Biometrics",
@@ -55,6 +55,7 @@ function Box1({ colorMode }) {
     },
     {
       color: "#63B3ED",
+      shadowcolor: "#90CDF4",
       t1: "02",
       t2: "Image Analysis",
       content:
@@ -62,6 +63,7 @@ function Box1({ colorMode }) {
     },
     {
       color: "#FC8181",
+      shadowcolor:"#FBB6CE",
       t1: "03",
       t2: "Cross-Media Translation",
       content:
@@ -69,10 +71,46 @@ function Box1({ colorMode }) {
     },
     {
       color: "#f7d181",
+      shadowcolor:"#FBD38D",
       t1: "04",
       t2: "3D Modelling and Design",
       content:
         "We offer services for automated generation of 3D assets with realistic shapes and textures. We animate the 3D models with voice and videos with an aim to retarget voice and/or expressions with pose from a single Image/video.",
+    },
+  ];
+
+  const plugplay = [
+    {
+      t: "Exclusive Right",
+      color: "#68D391",
+      shadowcolor: "#9AE6B4",
+      img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgreen.e71c8735.png&w=256&q=75",
+      content:
+        "Our mission is to make an impact in empowering human society with AI. Hence, all Intellectual Property Rights belongs to you.",
+    },
+    {
+      t: "Research Driven",
+      color: "#63B3ED",
+      shadowcolor: "#90CDF4",
+      img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblue.f22859fe.png&w=256&q=75",
+      content:
+        "We regularly benchmark our solutions via comparing industry-vide evaluations so our partners only get the best that AI can offer.",
+    },
+    {
+      t: "Plug-and-Play",
+      color: "#F687B3",
+      shadowcolor:"#FBB6CE",
+      img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fred.a7efdb29.png&w=128&q=75",
+      content:
+        "We provide AI-driven solutions into businesses where they can bring tangible value. Each solution is customized as per your needs and deployed on any computing device of your choice.",
+    },
+    {
+      t: "Lifetime Support",
+      color: "#FC8181",
+      shadowcolor:"#FBD38D",
+      img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fyellow.d937d179.png&w=256&q=75",
+      content:
+        "Should you face any issues, we are always at your service. We provide lifetime technical support & upgrade options.",
     },
   ];
 
@@ -83,10 +121,9 @@ function Box1({ colorMode }) {
         bgImage={`url(${videoSource})`}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
-        mt="3pc"
-        h="80vh"
+        h="100vh"
       >
-        <Box w="40%" p={6} ml="10pc" pt="5pc">
+        <Box w="40%" p={6} ml="10pc" pt="10pc">
           <Heading size="lg" fontSize="60px" fontWeight="600px">
             We are at the forefront of AI
           </Heading>
@@ -94,7 +131,13 @@ function Box1({ colorMode }) {
             From Conserving Wildlife to Automatically Generating Caricatures– We
             Do It All
           </Text>
-          <Button bgColor="black" color="white" size="lg" mt="10px">
+          <Button
+            bgColor="black"
+            color="white"
+            size="lg"
+            mt="10px"
+            position="relative"
+          >
             Learn More
           </Button>
         </Box>
@@ -120,7 +163,7 @@ function Box1({ colorMode }) {
           w="80%"
           margin="auto"
           mt="40px"
-          bgColor={colorMode === "light" ? "#EBF8FF" : ""}
+          bgColor={colorMode === "light" ? "#EBF8FF" : "rgba(0, 0, 0, 0.24)"}
           p="2pc"
           borderRadius={"1pc"}
         >
@@ -191,14 +234,17 @@ function Box1({ colorMode }) {
           p="1pc"
           mt="3pc"
         >
-          {services.map((e)=>{
-            return <Services
-            t1={e.t1}
-            t2={e.t2}
-            content={e.content}
-            color={e.color}
-            colorMode={colorMode}
-          />
+          {services.map((e) => {
+            return (
+              <Services
+                t1={e.t1}
+                t2={e.t2}
+                content={e.content}
+                color={e.color}
+                colorMode={colorMode}
+                shadowcolor={e.shadowcolor}
+              />
+            );
           })}
         </Box>
       </Box>
@@ -315,111 +361,46 @@ function Box1({ colorMode }) {
             display="grid"
             gap="1pc"
             gridTemplateColumns="repeat(4,1fr)"
-            bgColor="#f0fcfc"
+            bgColor={colorMode === "light" ? "#f0fcfc" : ""}
             p="1pc"
             py="3pc"
             my="2.5pc"
           >
-            <Box
-              p="1pc"
-              bgColor="white"
-              borderRadius="1pc"
-              className=""
-              _hover={{
-                border: "1px solid #68D391",
-                transition: "ease-in-out 1s",
-                bgColor: "#F0FFF4",
-              }}
-            >
-              <Text fontSize="35px" fontWeight="600" color="black">
-                Exclusive Rights
-              </Text>
-              <Image
-                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgreen.e71c8735.png&w=256&q=75"
-                margin={"auto"}
-                my="1pc"
-              />
-              <Text fontSize="18px" color="grey" p="0.5pc">
-                Our mission is to make an impact in empowering human society
-                with AI. Hence, all Intellectual Property Rights belongs to you.
-              </Text>
-            </Box>
+            {
+              plugplay.map((e)=>{
+                return <Box
+                p="1pc"
+                bgColor={colorMode === "light" ? "white" : "rgba(0, 0, 0, 0.24)"}
+                borderRadius="1pc"
+                _hover={{
+                  border: `1px solid ${e.color}`,
+                  transition: "ease-in-out 1s",
+                  boxShadow:`inset -50px 20px 120px -36px ${e.shadowcolor}`
+                  // bgColor: "#F0FFF4",
+                }}
+              >
+                {/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */}
+                <Text fontSize="35px" fontWeight="600">
+                  {e.t}
+                </Text>
+                <Box h="40%" align="center">
+                  <Image
+                    src={e.img}
+                    margin={"auto"}
+                    h="80%"
+                    align="center"
+                    // objectFit='contain'
+                    // border= "1px solid #68D391"
+                    my="1pc"
+                  />
+                </Box>
+                <Text fontSize="18px" color="grey" p="0.5pc">
+                 {e.content}
+                </Text>
+              </Box>
+              })
+            }
 
-            <Box
-              p="1pc"
-              bgColor="white"
-              borderRadius="1pc"
-              className=""
-              _hover={{
-                border: "1px solid #63B3ED",
-                transition: "ease-in-out 1s",
-                bgColor: "#EBF8FF",
-              }}
-            >
-              <Text fontSize="35px" fontWeight="600" color="black">
-                Research Driven
-              </Text>
-              <Image
-                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblue.f22859fe.png&w=256&q=75"
-                margin={"auto"}
-                my="1pc"
-              />
-              <Text fontSize="18px" color="grey" p="0.5pc">
-                We regularly benchmark our solutions via comparing industry-vide
-                evaluations so our partners only get the best that AI can offer.
-              </Text>
-            </Box>
-
-            <Box
-              p="1pc"
-              bgColor="white"
-              borderRadius="1pc"
-              className=""
-              _hover={{
-                border: "1px solid #F687B3",
-                transition: "ease-in-out 1s",
-                bgColor: "#FFF5F7",
-              }}
-            >
-              <Text fontSize="35px" fontWeight="600" color="black">
-                Plug-and-Play
-              </Text>
-              <Image
-                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fred.a7efdb29.png&w=128&q=75"
-                margin={"auto"}
-                my="1pc"
-              />
-              <Text fontSize="18px" color="grey" p="0.5pc">
-                We provide AI-driven solutions into businesses where they can
-                bring tangible value. Each solution is customized as per your
-                needs and deployed on any computing device of your choice.
-              </Text>
-            </Box>
-
-            <Box
-              p="1pc"
-              bgColor="white"
-              borderRadius="1pc"
-              className=""
-              _hover={{
-                border: "1px solid #FC8181",
-                transition: "ease-in-out 1s",
-                bgColor: "#FFFAF0",
-              }}
-            >
-              <Text fontSize="35px" fontWeight="600" color="black">
-                Lifetime Support
-              </Text>
-              <Image
-                src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fyellow.d937d179.png&w=256&q=75"
-                margin={"auto"}
-                my="1pc"
-              />
-              <Text fontSize="18px" color="grey" p="0.5pc" lineHeight="1.8pc">
-                Should you face any issues, we are always at your service. We
-                provide lifetime technical support & upgrade options.
-              </Text>
-            </Box>
           </Box>
         </Box>
       </Box>
@@ -470,6 +451,12 @@ function Box1({ colorMode }) {
               // align="left"
               gridRow="1 / 2"
               gridColumn="1 / 2"
+              bgColor={
+                colorMode === "light"
+                  ? "rgba(0, 0, 0, 0.04)"
+                  : "rgba(0, 0, 0, 0.24)"
+              }
+              borderLeftRadius={"1.5pc"}
               borderRight="2px dashed grey"
               p="1pc"
             >
@@ -494,6 +481,12 @@ function Box1({ colorMode }) {
               borderLeft="2px dashed grey"
               p="1pc"
               my="0.5pc"
+              bgColor={
+                colorMode === "light"
+                  ? "rgba(0, 0, 0, 0.04)"
+                  : "rgba(0, 0, 0, 0.24)"
+              }
+              borderRightRadius={"1.5pc"}
             >
               {" "}
               <Avatar
@@ -517,6 +510,12 @@ function Box1({ colorMode }) {
               gridColumn="1 / 2"
               borderRight="2px dashed grey"
               p="1pc"
+              bgColor={
+                colorMode === "light"
+                  ? "rgba(0, 0, 0, 0.04)"
+                  : "rgba(0, 0, 0, 0.24)"
+              }
+              borderLeftRadius={"1.5pc"}
             >
               {" "}
               <Avatar
@@ -538,8 +537,8 @@ function Box1({ colorMode }) {
         </Box>
       </Box>
 
-      <Box my="2.5pc" bgColor="#FFF5F7" color="black" p="3pc">
-        <Box w="18%" margin={"auto"} pt="20px">
+      <Box my="2.5pc" bgColor={colorMode === "light" ? "#FFF5F7" : ""} p="3pc">
+        <Box w="15%" margin={"auto"} pt="20px">
           <Text
             fontSize="25px"
             size="lg"
@@ -547,7 +546,7 @@ function Box1({ colorMode }) {
             borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
-            WHY CHOOSE LENS
+            OUR BLOGS
           </Text>
         </Box>
         <Box w="60%" margin="auto">
@@ -563,8 +562,17 @@ function Box1({ colorMode }) {
           gridTemplateColumns={"repeat(2,1fr)"}
           gap="1pc"
         >
-          {whyChooseLens.map((e,i) => {
-            return <BlogAnimation key={i} t1={e.t1} t2={e.t2} content={e.content} i={i}/>;
+          {whyChooseLens.map((e, i) => {
+            return (
+              <BlogAnimation
+                key={i}
+                t1={e.t1}
+                t2={e.t2}
+                content={e.content}
+                i={i}
+                colorMode={colorMode}
+              />
+            );
           })}
         </Box>
       </Box>
