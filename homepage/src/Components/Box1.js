@@ -47,7 +47,7 @@ function Box1({ colorMode }) {
   const services = [
     {
       shadowcolor: "#9AE6B4",
-      shadowcolor2:"#F0FFF4",
+      shadowcolor2: "#F0FFF4",
       color: "#68D391",
       t1: "01",
       t2: "Biometrics",
@@ -58,15 +58,15 @@ function Box1({ colorMode }) {
       color: "#63B3ED",
       shadowcolor: "#90CDF4",
       t1: "02",
-      shadowcolor2:"#EBF8FF",
+      shadowcolor2: "#EBF8FF",
       t2: "Image Analysis",
       content:
         " Outsource the overly complex image analysis work to our intelligent machines that adaptively learn, so you can focus on making the best decisions for your business.",
     },
     {
       color: "#FC8181",
-      shadowcolor2:"#FFF5F7",
-      shadowcolor:"#FBB6CE",
+      shadowcolor2: "#FFF5F7",
+      shadowcolor: "#FBB6CE",
       t1: "03",
       t2: "Cross-Media Translation",
       content:
@@ -74,8 +74,8 @@ function Box1({ colorMode }) {
     },
     {
       color: "#f7d181",
-      shadowcolor2:"#FFFAF0",
-      shadowcolor:"#FBD38D",
+      shadowcolor2: "#FFFAF0",
+      shadowcolor: "#FBD38D",
       t1: "04",
       t2: "3D Modelling and Design",
       content:
@@ -88,7 +88,7 @@ function Box1({ colorMode }) {
       t: "Exclusive Right",
       color: "#68D391",
       shadowcolor: "#9AE6B4",
-      shadowcolor2:"#F0FFF4",
+      shadowcolor2: "#F0FFF4",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgreen.e71c8735.png&w=256&q=75",
       content:
         "Our mission is to make an impact in empowering human society with AI. Hence, all Intellectual Property Rights belongs to you.",
@@ -97,7 +97,7 @@ function Box1({ colorMode }) {
       t: "Research Driven",
       color: "#63B3ED",
       shadowcolor: "#90CDF4",
-      shadowcolor2:"#EBF8FF",
+      shadowcolor2: "#EBF8FF",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblue.f22859fe.png&w=256&q=75",
       content:
         "We regularly benchmark our solutions via comparing industry-vide evaluations so our partners only get the best that AI can offer.",
@@ -105,8 +105,8 @@ function Box1({ colorMode }) {
     {
       t: "Plug-and-Play",
       color: "#F687B3",
-      shadowcolor:"#FBB6CE",
-      shadowcolor2:"#FFF5F7",
+      shadowcolor: "#FBB6CE",
+      shadowcolor2: "#FFF5F7",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fred.a7efdb29.png&w=128&q=75",
       content:
         "We provide AI-driven solutions into businesses where they can bring tangible value. Each solution is customized as per your needs and deployed on any computing device of your choice.",
@@ -114,8 +114,8 @@ function Box1({ colorMode }) {
     {
       t: "Lifetime Support",
       color: "#FC8181",
-      shadowcolor:"#FBD38D",
-      shadowcolor2:"#FFFAF0",
+      shadowcolor: "#FBD38D",
+      shadowcolor2: "#FFFAF0",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fyellow.d937d179.png&w=256&q=75",
       content:
         "Should you face any issues, we are always at your service. We provide lifetime technical support & upgrade options.",
@@ -129,9 +129,14 @@ function Box1({ colorMode }) {
         bgImage={`url(${videoSource})`}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
-        h="100vh"
+        // h="100vh"
       >
-        <Box w="40%" p={6} ml="10pc" pt="10pc">
+        <Box
+          w={{ md: "40%", sm: "80%" }}
+          p={6}
+          ml={{ md: "10pc" }}
+          pt={{ md: "10pc" }}
+        >
           <Heading size="lg" fontSize="60px" fontWeight="600px">
             We are at the forefront of AI
           </Heading>
@@ -152,7 +157,7 @@ function Box1({ colorMode }) {
       </Box>
 
       <Box h="auto" p="1pc" pb="2.5pc">
-        <Box w="22%" margin={"auto"}>
+        <Box w={{ md: "22%", sm: "77%" }} margin={"auto"}>
           <Heading
             fontSize="60px"
             size="lg"
@@ -166,16 +171,17 @@ function Box1({ colorMode }) {
         </Box>
         <Box
           display="flex"
-          gap="60px"
+          gap={{ md: "60px" }}
           justifyContent="space-between"
           w="80%"
           margin="auto"
+          flexDirection={{ md: "row", sm: "column-reverse" }}
           mt="40px"
           bgColor={colorMode === "light" ? "#EBF8FF" : "rgba(0, 0, 0, 0.24)"}
           p="2pc"
           borderRadius={"1pc"}
         >
-          <Box w="40%" mt="30px">
+          <Box w={{ md: "40%" }} mt="30px">
             <Heading fontSize="40px" size="lg" fontWeight="600px">
               Welcome to LENS
             </Heading>
@@ -188,7 +194,13 @@ function Box1({ colorMode }) {
               Learn More
             </Button>
           </Box>
-          <Box p="10px" borderRadius={"10px"} bgColor="white" w="50%" h="350px">
+          <Box
+            p="10px"
+            borderRadius={"10px"}
+            bgColor="white"
+            w={{ md: "50%" }}
+            h="350px"
+          >
             <Image
               src="https://lenscorp.ai/_next/image?url=%2FImages%2FaboutLatest.webp&w=640&q=75"
               borderRadius={"10px"}
@@ -201,7 +213,7 @@ function Box1({ colorMode }) {
       </Box>
 
       <Box bgColor={colorMode === "light" ? "#EBF8FF" : ""}>
-        <Box w="8%" margin={"auto"} pt="20px">
+        <Box w={{ lg: "8%", md: "20%", sm: "40%" }} margin={"auto"} pt="20px">
           <Text
             fontSize="20px"
             size="lg"
@@ -214,7 +226,7 @@ function Box1({ colorMode }) {
         </Box>
 
         <Box
-          w="45%"
+          w={{ lg: "45%", md: "70%", sm: "100%" }}
           margin={"auto"}
           mt="1pc"
           pt="20px"
@@ -235,7 +247,7 @@ function Box1({ colorMode }) {
 
         <Box
           display="grid"
-          gridTemplateColumns={"repeat(2,1fr)"}
+          gridTemplateColumns={{ lg: "repeat(2,1fr)", md: "repeat(1,1fr)" }}
           w="75%"
           margin="auto"
           gap="3pc"
@@ -250,7 +262,9 @@ function Box1({ colorMode }) {
                 content={e.content}
                 color={e.color}
                 colorMode={colorMode}
-                shadowcolor={colorMode==='light'?e.shadowcolor2:e.shadowcolor}
+                shadowcolor={
+                  colorMode === "light" ? e.shadowcolor2 : e.shadowcolor
+                }
               />
             );
           })}
@@ -260,7 +274,7 @@ function Box1({ colorMode }) {
       <Box>
         {/* Content */}
 
-        <Box w="18%" margin={"auto"} pt="20px">
+        <Box w={{ md: "18%", sm: "40%" }} margin={"auto"} pt="20px">
           <Text
             fontSize="25px"
             size="lg"
@@ -273,7 +287,7 @@ function Box1({ colorMode }) {
         </Box>
 
         <Box
-          w="58%"
+          w={{ md: "58%", sm: "98%" }}
           margin={"auto"}
           mt="1pc"
           pt="20px"
@@ -299,8 +313,10 @@ function Box1({ colorMode }) {
           <Box
             display="grid"
             mt="1pc"
-            gridTemplateColumns="repeat(2,1fr)"
+            gridTemplateColumns={{ md: "repeat(2,1fr)", sm: "repeat(1,1fr)" }}
             gap="3pc"
+            align="center"
+            justifyContent={"center"}
           >
             <Box>
               <Flex gap="0.7pc" alignItems="center">
@@ -368,47 +384,55 @@ function Box1({ colorMode }) {
           <Box
             display="grid"
             gap="1pc"
-            gridTemplateColumns="repeat(4,1fr)"
+            gridTemplateColumns={{
+              lg: "repeat(4,1fr)",
+              md: "repeat(3,1fr)",
+              sm: "repeat(1,1fr)",
+              base: "repeat(1,1fr)",
+            }}
             bgColor={colorMode === "light" ? "#f0fcfc" : ""}
             p="1pc"
             py="3pc"
             my="2.5pc"
           >
-            {
-              plugplay.map((e)=>{
-                return <Box
-                p="1pc"
-                bgColor={colorMode === "light" ? "white" : "rgba(0, 0, 0, 0.24)"}
-                borderRadius="1pc"
-                _hover={{
-                  border: `1px solid ${e.color}`,
-                  transition: "ease-in-out 1s",
-                  boxShadow:`inset -50px 20px 120px -36px ${colorMode==="light"?e.shadowcolor2:e.shadowcolor}`
-                  // bgColor: "#F0FFF4",
-                }}
-              >
-                {/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */}
-                <Text fontSize="35px" fontWeight="600">
-                  {e.t}
-                </Text>
-                <Box h="40%" align="center">
-                  <Image
-                    src={e.img}
-                    margin={"auto"}
-                    h="80%"
-                    align="center"
-                    // objectFit='contain'
-                    // border= "1px solid #68D391"
-                    my="1pc"
-                  />
+            {plugplay.map((e) => {
+              return (
+                <Box
+                  p="1pc"
+                  bgColor={
+                    colorMode === "light" ? "white" : "rgba(0, 0, 0, 0.24)"
+                  }
+                  borderRadius="1pc"
+                  _hover={{
+                    border: `1px solid ${e.color}`,
+                    transition: "ease-in-out 1s",
+                    boxShadow: `inset -50px 20px 120px -36px ${
+                      colorMode === "light" ? e.shadowcolor2 : e.shadowcolor
+                    }`,
+                    // bgColor: "#F0FFF4",
+                  }}
+                >
+                  {/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */}
+                  <Text fontSize="35px" fontWeight="600">
+                    {e.t}
+                  </Text>
+                  <Box h="40%" align="center">
+                    <Image
+                      src={e.img}
+                      margin={"auto"}
+                      h="80%"
+                      align="center"
+                      // objectFit='contain'
+                      // border= "1px solid #68D391"
+                      my="1pc"
+                    />
+                  </Box>
+                  <Text fontSize="18px" color="grey" p="0.5pc">
+                    {e.content}
+                  </Text>
                 </Box>
-                <Text fontSize="18px" color="grey" p="0.5pc">
-                 {e.content}
-                </Text>
-              </Box>
-              })
-            }
-
+              );
+            })}
           </Box>
         </Box>
       </Box>
@@ -416,7 +440,7 @@ function Box1({ colorMode }) {
       <Box>
         {/* Content */}
 
-        <Box w="15%" margin={"auto"} pt="20px" my="3pc">
+        <Box w={{ md: "18%", sm: "50%" }} margin={"auto"} pt="20px" my="3pc">
           <Text
             fontSize="25px"
             size="lg"
@@ -427,7 +451,7 @@ function Box1({ colorMode }) {
             OUR VISION
           </Text>
         </Box>
-        <Box w="60%" margin="auto">
+        <Box w={{ lg: "60%", md: "100%" }} margin={{ md: "auto", sm: "1pc" }}>
           {" "}
           <Heading fontSize="65px" fontWeight="600px" align="center" p="1pc">
             AI for Social Good
@@ -444,7 +468,12 @@ function Box1({ colorMode }) {
             to typically opaque AI models and their predictions.
           </Text>
         </Box>
-        <Box w="70%" display="flex" m="auto" mt="3pc">
+        <Box
+          w={{ md: "70%", sm: "100%" }}
+          display="flex"
+          m={{ md: "auto", sm: "0.5pc" }}
+          mt="3pc"
+        >
           <Box
             // borderRight="2px dashed black"
             w="100%"
@@ -545,8 +574,12 @@ function Box1({ colorMode }) {
         </Box>
       </Box>
 
-      <Box my="2.5pc" bgColor={colorMode === "light" ? "#FFF5F7" : ""} p="3pc">
-        <Box w="15%" margin={"auto"} pt="20px">
+      <Box
+        my="2.5pc"
+        bgColor={colorMode === "light" ? "#FFF5F7" : ""}
+        p={{ md: "3pc" }}
+      >
+        <Box w={{ md: "15%", sm: "40%" }} margin={"auto"} pt="20px">
           <Text
             fontSize="25px"
             size="lg"
@@ -557,17 +590,22 @@ function Box1({ colorMode }) {
             OUR BLOGS
           </Text>
         </Box>
-        <Box w="60%" margin="auto">
+        <Box w={{ md: "60%", sm: "100%" }} margin="auto">
           {" "}
-          <Heading fontSize="65px" fontWeight="600px" align="center" p="1pc">
+          <Heading
+            fontSize={{ md: "65px", sm: "55px" }}
+            fontWeight="600px"
+            align="center"
+            p="1pc"
+          >
             Inhouse Mindscape
           </Heading>
         </Box>
         <Box
-          w="80%"
+          w={{ lg: "80%", md: "100%" }}
           display="grid"
           margin="auto"
-          gridTemplateColumns={"repeat(2,1fr)"}
+          gridTemplateColumns={{ lg: "repeat(2,1fr)", md: "repeat(1,1fr)" }}
           gap="1pc"
         >
           {whyChooseLens.map((e, i) => {
@@ -584,16 +622,25 @@ function Box1({ colorMode }) {
           })}
         </Box>
       </Box>
-
-      <Box display="flex" justifyContent={"space-between"} gap="3pc" p="3pc">
+      <Box
+        display="flex"
+        flexDirection={{ base: "column", md: "row", lg: "row" }}
+        justifyContent={{
+          base: "center",
+          md: "space-between",
+          lg: "space-between",
+        }}
+        gap="3pc"
+        p="3pc"
+      >
         <Box>
-          <Heading w="50%" size="lg" fontSize="65px" mt="3pc">
+          <Heading size="lg" fontSize="65px" mt="3pc">
             Get in touch with us
           </Heading>
           <Text mt="2pc" fontSize="22px" fontWeight="400">
             Send your enquiry now!
           </Text>
-          <Box display="flex" my="2pc">
+          <Box display="flex" flexDirection={{md:"row",sm:"column"}} my="2pc">
             <Input placeholder="Enter Email Address" border="1px solid black" />
             <Button
               borderRadius={"lg"}
@@ -606,12 +653,17 @@ function Box1({ colorMode }) {
             </Button>
           </Box>
         </Box>
-        <Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75" />
+        <Image
+          src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75"
+          w={{ base: "100%", md: "60%", lg: "50%" }}
+        />
       </Box>
 
+      {/* Footer */}
       <Box
         display={"flex"}
         justifyContent={"space-between"}
+        flexDirection={{md:"row",sm:"column"}}
         bgColor="#2A4365"
         p="2.5pc"
         color="lightgrey"

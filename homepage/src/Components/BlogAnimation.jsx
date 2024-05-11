@@ -12,8 +12,8 @@ function BlogAnimation({ t1, t2, content, i ,colorMode}) {
         bgColor={colorMode === "light" ? "white" : "rgba(0, 0, 0, 0.24)"}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        gridRow={i === 2 ? "2/4" : ""}
-        gridColumn={i === 2 ? "1/3" : ""}
+        gridRow={{lg:`${i === 2 ? "2/4" : ""}`}}
+        gridColumn={{lg:`${i === 2 ? "1/3" : ""}`}}
         transition={"ease-in-out 2s"}
       >
         {isHovered === false ? (
