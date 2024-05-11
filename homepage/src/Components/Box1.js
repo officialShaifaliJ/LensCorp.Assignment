@@ -47,6 +47,7 @@ function Box1({ colorMode }) {
   const services = [
     {
       shadowcolor: "#9AE6B4",
+      shadowcolor2:"#F0FFF4",
       color: "#68D391",
       t1: "01",
       t2: "Biometrics",
@@ -57,12 +58,14 @@ function Box1({ colorMode }) {
       color: "#63B3ED",
       shadowcolor: "#90CDF4",
       t1: "02",
+      shadowcolor2:"#EBF8FF",
       t2: "Image Analysis",
       content:
         " Outsource the overly complex image analysis work to our intelligent machines that adaptively learn, so you can focus on making the best decisions for your business.",
     },
     {
       color: "#FC8181",
+      shadowcolor2:"#FFF5F7",
       shadowcolor:"#FBB6CE",
       t1: "03",
       t2: "Cross-Media Translation",
@@ -71,6 +74,7 @@ function Box1({ colorMode }) {
     },
     {
       color: "#f7d181",
+      shadowcolor2:"#FFFAF0",
       shadowcolor:"#FBD38D",
       t1: "04",
       t2: "3D Modelling and Design",
@@ -84,6 +88,7 @@ function Box1({ colorMode }) {
       t: "Exclusive Right",
       color: "#68D391",
       shadowcolor: "#9AE6B4",
+      shadowcolor2:"#F0FFF4",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgreen.e71c8735.png&w=256&q=75",
       content:
         "Our mission is to make an impact in empowering human society with AI. Hence, all Intellectual Property Rights belongs to you.",
@@ -92,6 +97,7 @@ function Box1({ colorMode }) {
       t: "Research Driven",
       color: "#63B3ED",
       shadowcolor: "#90CDF4",
+      shadowcolor2:"#EBF8FF",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fblue.f22859fe.png&w=256&q=75",
       content:
         "We regularly benchmark our solutions via comparing industry-vide evaluations so our partners only get the best that AI can offer.",
@@ -100,6 +106,7 @@ function Box1({ colorMode }) {
       t: "Plug-and-Play",
       color: "#F687B3",
       shadowcolor:"#FBB6CE",
+      shadowcolor2:"#FFF5F7",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fred.a7efdb29.png&w=128&q=75",
       content:
         "We provide AI-driven solutions into businesses where they can bring tangible value. Each solution is customized as per your needs and deployed on any computing device of your choice.",
@@ -108,6 +115,7 @@ function Box1({ colorMode }) {
       t: "Lifetime Support",
       color: "#FC8181",
       shadowcolor:"#FBD38D",
+      shadowcolor2:"#FFFAF0",
       img: "https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fyellow.d937d179.png&w=256&q=75",
       content:
         "Should you face any issues, we are always at your service. We provide lifetime technical support & upgrade options.",
@@ -242,7 +250,7 @@ function Box1({ colorMode }) {
                 content={e.content}
                 color={e.color}
                 colorMode={colorMode}
-                shadowcolor={e.shadowcolor}
+                shadowcolor={colorMode==='light'?e.shadowcolor2:e.shadowcolor}
               />
             );
           })}
@@ -375,7 +383,7 @@ function Box1({ colorMode }) {
                 _hover={{
                   border: `1px solid ${e.color}`,
                   transition: "ease-in-out 1s",
-                  boxShadow:`inset -50px 20px 120px -36px ${e.shadowcolor}`
+                  boxShadow:`inset -50px 20px 120px -36px ${colorMode==="light"?e.shadowcolor2:e.shadowcolor}`
                   // bgColor: "#F0FFF4",
                 }}
               >
