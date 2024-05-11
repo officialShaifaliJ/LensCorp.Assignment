@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Heading,
@@ -8,26 +8,85 @@ import {
   Flex,
   Input,
   Avatar,
+  // LightMode,
 } from "@chakra-ui/react";
 import { CheckIcon, AtSignIcon, SunIcon } from "@chakra-ui/icons";
 import { FaPeopleLine } from "react-icons/fa6";
 import { IoMdWifi } from "react-icons/io";
 import { PiBezierCurveThin } from "react-icons/pi";
+import BlogAnimation from "./BlogAnimation";
+import Services from './Services';
 
-function Box1() {
+
+function Box1({ colorMode }) {
+  const whyChooseLens = [
+    {
+      t1: "New!",
+      t2: "Generative AI",
+      content:
+        "In today's data-driven marketing world, keeping up with content creation demands can be a challenge. Read our latest blog to explore the power of Generative AI and its potential to reshape the marketing landscape....",
+    },
+    {
+      t1: "April 25, 2024",
+      t2: "The Evolution of AI in Games",
+      content:
+      "In today's data-driven marketing world, keeping up with content creation demands can be a challenge. Read our latest blog to explore the power of Generative AI and its potential to reshape the marketing landscape....",
+       },
+    {
+      t1: "April 18, 2024",
+      t2: "Unmasking the Misconceptions of Artificial Intelligence in the Workplace",
+      content:
+        "The rise of Artificial Intelligence (AI) has sparked both excitement and apprehension. Many professionals are unsure how AI impacts their work....",
+    },
+  ];
+
+  const videoSource =
+    colorMode === "light"
+      ? "https://lenscorp.ai/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdetwrhe0k%2Fimage%2Fupload%2Fv1691730929%2Flenscorp-website%2FDesktop_-_23_u3ypg0.jpg&w=128&q=75"
+      : "https://res.cloudinary.com/detwrhe0k/video/upload/v1691730947/lenscorp-website/pexels-pressmaster-3129671-3840x2160-30fps_1_ak5nsz_d7alrn.mp4";
+
+  const services = [
+    {
+      color: "#68D391",
+      t1: "01",
+      t2: "Biometrics",
+      content:
+        "Academia-backed & In-house researched State-of-the-Art Face, Fingerprint, and Iris Recognition SDKs. Enable real-time automated Biometric applications on edge devices even without an active internet connection.",
+    },
+    {
+      color: "#63B3ED",
+      t1: "02",
+      t2: "Image Analysis",
+      content:
+        " Outsource the overly complex image analysis work to our intelligent machines that adaptively learn, so you can focus on making the best decisions for your business.",
+    },
+    {
+      color: "#FC8181",
+      t1: "03",
+      t2: "Cross-Media Translation",
+      content:
+        " Will something like Siri or Alexa enhance your business? We can deliver text-to-speech, text-to-image, speech-to-text, speech-to-image, speech-to-image, image-to-text and image-to-speech solutions for maximum convenience.",
+    },
+    {
+      color: "#f7d181",
+      t1: "04",
+      t2: "3D Modelling and Design",
+      content:
+        "We offer services for automated generation of 3D assets with realistic shapes and textures. We animate the 3D models with voice and videos with an aim to retarget voice and/or expressions with pose from a single Image/video.",
+    },
+  ];
+
   return (
     <>
       <Box
         //   bgGradient="linear(to-br,lightblue 15%, #FEEBC8 40%, #FED7E2 50%)"
-        bgImage={
-          "https://lenscorp.ai/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdetwrhe0k%2Fimage%2Fupload%2Fv1691730929%2Flenscorp-website%2FDesktop_-_23_u3ypg0.jpg&w=128&q=75"
-        }
+        bgImage={`url(${videoSource})`}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
         mt="3pc"
         h="80vh"
       >
-        <Box w="40%" p={6} ml="10pc" pt="5pc" color="black">
+        <Box w="40%" p={6} ml="10pc" pt="5pc">
           <Heading size="lg" fontSize="60px" fontWeight="600px">
             We are at the forefront of AI
           </Heading>
@@ -61,11 +120,11 @@ function Box1() {
           w="80%"
           margin="auto"
           mt="40px"
-          bgColor="#EBF8FF"
+          bgColor={colorMode === "light" ? "#EBF8FF" : ""}
           p="2pc"
           borderRadius={"1pc"}
         >
-          <Box w="40%" mt="30px" color="black">
+          <Box w="40%" mt="30px">
             <Heading fontSize="40px" size="lg" fontWeight="600px">
               Welcome to LENS
             </Heading>
@@ -74,7 +133,7 @@ function Box1() {
               custom AI - powered solutions for your business so you don't have
               to.
             </Text>
-            <Button border="1px solid black" mt="10px" color="black">
+            <Button border="1px solid black" mt="10px">
               Learn More
             </Button>
           </Box>
@@ -90,7 +149,7 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box bgColor={"#EBF8FF"} color="black">
+      <Box bgColor={colorMode === "light" ? "#EBF8FF" : ""}>
         <Box w="8%" margin={"auto"} pt="20px">
           <Text
             fontSize="20px"
@@ -132,155 +191,15 @@ function Box1() {
           p="1pc"
           mt="3pc"
         >
-          <Box
-            p="1pc"
-            bgColor="white"
-            borderRadius="1pc"
-            className=""
-            _hover={{
-              border: "1px solid #68D391",
-              transition: "ease-in-out 1s",
-              bgColor: "#F0FFF4",
-            }}
-          >
-            <Heading
-              display="flex"
-              justifiyContent="center"
-              alignItems="baseline"
-              color="lightgray"
-            >
-              <Text fontSize="80px">01</Text>
-              <Text fontWeight="600" fontSize="40px" color="#68D391">
-                Biomertics
-              </Text>
-            </Heading>
-            <Heading
-              fontSize="20px"
-              alignContent="center"
-              color="grey"
-              p="0.5pc"
-              margin={"auto"}
-              justifyContent="center"
-              lineHeight="2pc"
-            >
-              Academia-backed & In-house researched State-of-the-Art Face,
-              Fingerprint, and Iris Recognition SDKs. Enable real-time automated
-              Biometric applications on edge devices even without an active
-              internet connection.
-            </Heading>
-          </Box>
-
-          <Box
-            p="1pc"
-            bgColor="white"
-            borderRadius="1pc"
-            className=""
-            _hover={{
-              border: "1px solid #63B3ED",
-              transition: "ease-in-out 1s",
-              bgColor: "#EBF8FF",
-            }}
-          >
-            <Heading
-              display="flex"
-              justifiyContent="center"
-              alignItems="baseline"
-              color="lightgray"
-            >
-              <Text fontSize="80px">02</Text>
-              <Text fontWeight="600" fontSize="40px" color="#63B3ED">
-                Image Analysis
-              </Text>
-            </Heading>
-            <Heading
-              fontSize="20px"
-              alignContent="center"
-              color="grey"
-              p="0.5pc"
-              margin={"auto"}
-              justifyContent="center"
-              lineHeight="2pc"
-            >
-              Academia-backed & In-house researched State-of-the-Art Face,
-              Fingerprint, and Iris Recognition SDKs. Enable real-time automated
-              Biometric applications on edge devices even without an active
-              internet connection.
-            </Heading>
-          </Box>
-
-          <Box
-            p="1pc"
-            bgColor="white"
-            borderRadius="1pc"
-            _hover={{
-              border: "1px solid #FC8181",
-              transition: "ease-in-out 1s",
-              bgColor: "#FFF5F5",
-            }}
-          >
-            <Box display="flex" justifiyContent="center" alignItems="baseline">
-              <Heading fontSize="80px" color="lightgray">
-                03
-              </Heading>
-              <Text
-                fontWeight="600"
-                fontSize="40px"
-                color="#FC8181"
-                pl={"0.1pc"}
-              >
-                Cross-Media Transaction
-              </Text>
-            </Box>
-            <Heading
-              fontSize="20px"
-              alignContent="center"
-              color="grey"
-              p="0.5pc"
-              margin={"auto"}
-              justifyContent="center"
-              lineHeight="2pc"
-            >
-              Academia-backed & In-house researched State-of-the-Art Face,
-              Fingerprint, and Iris Recognition SDKs. Enable real-time automated
-              Biometric applications on edge devices even without an active
-              internet connection.
-            </Heading>
-          </Box>
-
-          <Box
-            p="1pc"
-            bgColor="white"
-            borderRadius="1pc"
-            className=""
-            _hover={{
-              border: "1px solid #FC8181",
-              transition: "ease-in-out 1s",
-              bgColor: "#FFFAF0",
-            }}
-          >
-            <Box display="flex" justifiyContent="center" alignItems="baseline">
-              <Heading fontSize="80px" color="lightgray">
-                04
-              </Heading>
-              <Text fontWeight="600" fontSize="40px" color="#F6AD55">
-                3D Modelling and Design
-              </Text>
-            </Box>
-            <Heading
-              fontSize="20px"
-              alignContent="center"
-              color="grey"
-              p="0.5pc"
-              margin={"auto"}
-              justifyContent="center"
-              lineHeight="2pc"
-            >
-              Academia-backed & In-house researched State-of-the-Art Face,
-              Fingerprint, and Iris Recognition SDKs. Enable real-time automated
-              Biometric applications on edge devices even without an active
-              internet connection.
-            </Heading>
-          </Box>
+          {services.map((e)=>{
+            return <Services
+            t1={e.t1}
+            t2={e.t2}
+            content={e.content}
+            color={e.color}
+            colorMode={colorMode}
+          />
+          })}
         </Box>
       </Box>
 
@@ -619,7 +538,7 @@ function Box1() {
         </Box>
       </Box>
 
-      <Box my="2pc" bgColor="#FFF5F7" color="black" p="2pc">
+      <Box my="2.5pc" bgColor="#FFF5F7" color="black" p="3pc">
         <Box w="18%" margin={"auto"} pt="20px">
           <Text
             fontSize="25px"
@@ -644,88 +563,9 @@ function Box1() {
           gridTemplateColumns={"repeat(2,1fr)"}
           gap="1pc"
         >
-          <Box borderRadius="0.5pc" p="2pc" bgColor="white">
-            <Text fontSize="20px" my="1pc" fontWeight="500px" color="red">
-              New!
-            </Text>
-            <Text fontSize="30px" fontWeight="500px">
-              Generative AI
-            </Text>
-            <Box
-              borderRadius="1pc"
-              fontSize={"20px"}
-              p="2pc"
-              bgColor="#FFFAF0"
-              my="1pc"
-            >
-              <Text>
-                In today's data-driven marketing world, keeping up with content
-                creation demands can be a challenge. Read our latest blog to
-                explore the power of Generative AI and its potential to reshape
-                the marketing landscape....
-              </Text>
-            </Box>
-            <Button color="red" border="0px" bgColor="white">
-              Read More{" "}
-            </Button>
-          </Box>
-          <Box borderRadius="0.5pc" p="2pc" bgColor="white">
-            <Text fontSize="20px" my="1pc" fontWeight="500px">
-              April 25, 2024
-            </Text>
-            <Text fontSize="30px" fontWeight="500px">
-              The Evolution of AI in Games
-            </Text>
-            <Box
-              borderRadius="1pc"
-              p="2pc"
-              fontSize={"20px"}
-              bgColor="#EBF8FF"
-              my="1pc"
-            >
-              <Text>
-                The integration of artificial intelligence (AI) within the
-                gaming industry has been a remarkable journey, marked by
-                continual innovation. Read our latest blog to dive deep into the
-                evolution that continues to shape the future of play!...
-              </Text>
-            </Box>
-            <Button color="red" border="0px" bgColor="white">
-              Read More{" "}
-            </Button>
-          </Box>
-
-          <Box
-            borderRadius="0.5pc"
-            p="2pc"
-            bgColor="white"
-            gridRow={"2/4"}
-            gridColumn={"1/3"}
-          >
-            <Text fontSize="20px" my="1pc" fontWeight="500px">
-              April 18, 2024
-            </Text>
-            <Text fontSize="30px" fontWeight="500px">
-              Unmasking the Misconceptions of Artificial Intelligence in the
-              Workplace
-            </Text>
-            <Box
-              borderRadius="1pc"
-              p="2pc"
-              fontSize={"20px"}
-              bgColor="#FFF5F7"
-              my="1pc"
-            >
-              <Text>
-                The rise of Artificial Intelligence (AI) has sparked both
-                excitement and apprehension. Many professionals are unsure how
-                AI impacts their work....
-              </Text>
-            </Box>
-            <Button color="red" border="0px" bgColor="white">
-              Read More{" "}
-            </Button>
-          </Box>
+          {whyChooseLens.map((e,i) => {
+            return <BlogAnimation key={i} t1={e.t1} t2={e.t2} content={e.content} i={i}/>;
+          })}
         </Box>
       </Box>
 
@@ -744,7 +584,7 @@ function Box1() {
               border="1px solid black"
               bgColor="black"
               color="white"
-              _hover={{bgColor:'black',color:'white'}}
+              _hover={{ bgColor: "black", color: "white" }}
             >
               Request Demo
             </Button>
@@ -753,10 +593,19 @@ function Box1() {
         <Image src="https://lenscorp.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmap_2_white.1bdb3808.png&w=750&q=75" />
       </Box>
 
-      <Box display={'flex'} justifyContent={'space-between'} bgColor='#2A4365' p='2.5pc' color='lightgrey'>
-         <Heading fontSize='18px' fontWeight={'500'}>2023 LENS, Inc. All rights reserved.</Heading>
-         <Heading fontSize='18px' fontWeight={'500'}>Code of conduct{" "} 
-         Sustainability Goals</Heading>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        bgColor="#2A4365"
+        p="2.5pc"
+        color="lightgrey"
+      >
+        <Heading fontSize="18px" fontWeight={"500"}>
+          2023 LENS, Inc. All rights reserved.
+        </Heading>
+        <Heading fontSize="18px" fontWeight={"500"}>
+          Code of conduct Sustainability Goals
+        </Heading>
       </Box>
     </>
   );
