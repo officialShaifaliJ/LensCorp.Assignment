@@ -123,31 +123,39 @@ function Box1({ colorMode }) {
   ];
 
   return (
-    <>
+    <Box
+      bgImage={`url(${videoSource})`}
+      backgroundRepeat={"no-repeat"}
+      backgroundSize={"fit"}
+    >
       <Box
         //   bgGradient="linear(to-br,lightblue 15%, #FEEBC8 40%, #FED7E2 50%)"
         bgImage={`url(${videoSource})`}
         backgroundRepeat={"no-repeat"}
         backgroundSize={"cover"}
-        // h="100vh"
+        h={{ md: "80vh", sm: "60vh" }}
       >
         <Box
-          w={{ md: "40%", sm: "80%" }}
+          w={{ lg: "40%", md: "60%", sm: "80%", base: "100%" }}
           p={6}
           ml={{ md: "10pc" }}
-          pt={{ md: "10pc" }}
+          pt={{ md: "7pc", base: "5pc" }}
         >
-          <Heading size="lg" fontSize="60px" fontWeight="600px">
+          <Heading
+            size="lg"
+            fontSize={{ md: "60px", sm: "50px", base: "50px" }}
+            fontWeight="600px"
+          >
             We are at the forefront of AI
           </Heading>
-          <Text fontSize="25px">
+          <Text fontSize={{ lg: "25px", md: "20px", sm: "20px", base: "20px" }}>
             From Conserving Wildlife to Automatically Generating Caricatures– We
             Do It All
           </Text>
           <Button
             bgColor="black"
             color="white"
-            size="lg"
+            size={{ md: "lg", base: "sm" }}
             mt="10px"
             position="relative"
           >
@@ -159,10 +167,10 @@ function Box1({ colorMode }) {
       <Box h="auto" p="1pc" pb="2.5pc">
         <Box w={{ md: "22%", sm: "77%" }} margin={"auto"}>
           <Heading
-            fontSize="60px"
+            fontSize={{ md: "60px", sm: "50px", base: "50px" }}
             size="lg"
             align={"center"}
-            borderBottom={"3px solid lightskyblue"}
+            // borderBottom={"3px solid lightskyblue"}
             fontWeight="600px"
             p="0.5pc"
           >
@@ -173,19 +181,23 @@ function Box1({ colorMode }) {
           display="flex"
           gap={{ md: "60px" }}
           justifyContent="space-between"
-          w="80%"
+          w={{ md: "80%", base: "95%" }}
           margin="auto"
-          flexDirection={{ md: "row", sm: "column-reverse" }}
+          flexDirection={{ md: "row", base: "column" }}
           mt="40px"
           bgColor={colorMode === "light" ? "#EBF8FF" : "rgba(0, 0, 0, 0.24)"}
           p="2pc"
           borderRadius={"1pc"}
         >
           <Box w={{ md: "40%" }} mt="30px">
-            <Heading fontSize="40px" size="lg" fontWeight="600px">
+            <Heading
+              fontSize={{ md: "40px", base: "30px" }}
+              size="lg"
+              fontWeight="600px"
+            >
               Welcome to LENS
             </Heading>
-            <Text fontSize="25px" mt="10px">
+            <Text fontSize={{ md: "25px", base: "20px" }} mt="10px">
               We put our hearts, souls and sweat into designing and developing
               custom AI - powered solutions for your business so you don't have
               to.
@@ -212,13 +224,17 @@ function Box1({ colorMode }) {
         </Box>
       </Box>
 
-      <Box bgColor={colorMode === "light" ? "#EBF8FF" : ""}>
+      <Box
+        //  backgroundColor='var(--gr-4, linear-gradient(54deg, #0091ff 0, #9cfeff 100%))'
+
+        bgColor={colorMode === "light" ? "#EBF8FF" : ""}
+      >
         <Box w={{ lg: "8%", md: "20%", sm: "40%" }} margin={"auto"} pt="20px">
           <Text
             fontSize="20px"
             size="lg"
             align={"center"}
-            borderBottom={"3px solid lightskyblue"}
+            // borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
             SERVICES
@@ -234,7 +250,7 @@ function Box1({ colorMode }) {
           alignContent="center"
         >
           <Heading
-            fontSize="60px"
+            fontSize={{ md: "60px", sm: "50px", base: "40px" }}
             fontWeight="600px"
             align="center"
             p="0.5pc"
@@ -248,7 +264,7 @@ function Box1({ colorMode }) {
         <Box
           display="grid"
           gridTemplateColumns={{ lg: "repeat(2,1fr)", md: "repeat(1,1fr)" }}
-          w="75%"
+          w={{ md: "75%", base: "90%" }}
           margin="auto"
           gap="3pc"
           p="1pc"
@@ -279,7 +295,7 @@ function Box1({ colorMode }) {
             fontSize="25px"
             size="lg"
             align={"center"}
-            borderBottom={"3px solid lightskyblue"}
+            // borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
             WHY CHOOSE LENS
@@ -289,17 +305,23 @@ function Box1({ colorMode }) {
         <Box
           w={{ md: "58%", sm: "98%" }}
           margin={"auto"}
+          p={1}
           mt="1pc"
           pt="20px"
           border={"0px solid black"}
         >
-          <Heading fontSize="60px" fontWeight="600px" align="center" p="0.5pc">
+          <Heading
+            fontSize={{ md: "60px", sm: "50px", base: "38px" }}
+            fontWeight="600px"
+            align="center"
+            p="0.5pc"
+          >
             AI-driven solutions backed by science
           </Heading>
 
           <Text
             mt="1pc"
-            fontSize="22px"
+            fontSize={{ md: "22px", base: "20px" }}
             fontWeight="400"
             color="grey"
             align="center"
@@ -311,8 +333,10 @@ function Box1({ colorMode }) {
           </Text>
 
           <Box
+            w={{ md: "100%", base: "100%" }}
             display="grid"
             mt="1pc"
+            margin="auto"
             gridTemplateColumns={{ md: "repeat(2,1fr)", sm: "repeat(1,1fr)" }}
             gap="3pc"
             align="center"
@@ -321,28 +345,28 @@ function Box1({ colorMode }) {
             <Box>
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   State-of-the-art solutions
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   Fast & Efficient
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   No extra computation fee
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   No licensing fee
                 </Text>
               </Flex>
@@ -351,28 +375,28 @@ function Box1({ colorMode }) {
             <Box>
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   Lifetime support & upgrades
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   Plug-and-Play
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   24x7 Progress Monitoring
                 </Text>
               </Flex>
 
               <Flex gap="0.7pc" alignItems="center">
                 <CheckIcon />
-                <Text fontSize="20px" fontWeight="500">
+                <Text fontSize={{ md: "20px", base: "18" }} fontWeight="500">
                   Incremental Updates
                 </Text>
               </Flex>
@@ -413,7 +437,10 @@ function Box1({ colorMode }) {
                   }}
                 >
                   {/* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */}
-                  <Text fontSize="35px" fontWeight="600">
+                  <Text
+                    fontSize={{ md: "35px", base: "30px" }}
+                    fontWeight="600"
+                  >
                     {e.t}
                   </Text>
                   <Box h="40%" align="center">
@@ -427,7 +454,11 @@ function Box1({ colorMode }) {
                       my="1pc"
                     />
                   </Box>
-                  <Text fontSize="18px" color="grey" p="0.5pc">
+                  <Text
+                    fontSize={{ md: "18px", base: "16px" }}
+                    color="grey"
+                    p="0.5pc"
+                  >
                     {e.content}
                   </Text>
                 </Box>
@@ -445,7 +476,7 @@ function Box1({ colorMode }) {
             fontSize="25px"
             size="lg"
             align={"center"}
-            borderBottom={"3px solid lightskyblue"}
+            // borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
             OUR VISION
@@ -453,12 +484,17 @@ function Box1({ colorMode }) {
         </Box>
         <Box w={{ lg: "60%", md: "100%" }} margin={{ md: "auto", sm: "1pc" }}>
           {" "}
-          <Heading fontSize="65px" fontWeight="600px" align="center" p="1pc">
+          <Heading
+            fontSize={{ md: "60px", sm: "50px", base: "38px" }}
+            fontWeight="600px"
+            align="center"
+            p="1pc"
+          >
             AI for Social Good
           </Heading>
           <Text
             mt="1pc"
-            fontSize="22px"
+            fontSize={{md:"22px",base:"19px"}}
             fontWeight="400"
             color="grey"
             align="center"
@@ -469,9 +505,9 @@ function Box1({ colorMode }) {
           </Text>
         </Box>
         <Box
-          w={{ md: "70%", sm: "100%" }}
+          w={{ md: "70%", base: "100%" }}
           display="flex"
-          m={{ md: "auto", sm: "0.5pc" }}
+          m={{ md: "auto", base: "0.5pc" }}
           mt="3pc"
         >
           <Box
@@ -479,22 +515,25 @@ function Box1({ colorMode }) {
             w="100%"
             display="grid"
             pr="1pc"
-            gridTemplateColumns="repeat(2, 1fr)"
-            gridTemplateRows="repeat(3, 1fr)"
+            gridTemplateColumns={{
+              md: "repeat(2, 1fr)",
+              base: "repeat(1, 1fr)",
+            }}
+            gridTemplateRows={{ base: "repeat(3, 1fr)" }}
             justifyContent="space-between"
             mb="3pc"
           >
             <Box
               // align="left"
-              gridRow="1 / 2"
-              gridColumn="1 / 2"
+              gridRow={{ md: "1 / 2" }}
+              gridColumn={{ md: "1 / 2" }}
               bgColor={
                 colorMode === "light"
                   ? "rgba(0, 0, 0, 0.04)"
                   : "rgba(0, 0, 0, 0.24)"
               }
               borderLeftRadius={"1.5pc"}
-              borderRight="2px dashed grey"
+              borderRight={{ md: "2px dashed grey" }}
               p="1pc"
             >
               {" "}
@@ -513,9 +552,9 @@ function Box1({ colorMode }) {
             </Box>
 
             <Box
-              gridRow="2 / 3"
-              gridColumn="2 / 3"
-              borderLeft="2px dashed grey"
+              gridRow={{ md: "2 / 3" }}
+              gridColumn={{ md: "2 / 3" }}
+              borderLeft={{ md: "2px dashed grey" }}
               p="1pc"
               my="0.5pc"
               bgColor={
@@ -543,9 +582,9 @@ function Box1({ colorMode }) {
 
             <Box
               // align="center"
-              gridRow="3 / 4"
-              gridColumn="1 / 2"
-              borderRight="2px dashed grey"
+              gridRow={{ md: "3 / 4" }}
+              gridColumn={{ md: "1 / 2" }}
+              borderRight={{ md: "2px dashed grey" }}
               p="1pc"
               bgColor={
                 colorMode === "light"
@@ -578,22 +617,23 @@ function Box1({ colorMode }) {
         my="2.5pc"
         bgColor={colorMode === "light" ? "#FFF5F7" : ""}
         p={{ md: "3pc" }}
+        py="2pc"
       >
-        <Box w={{ md: "15%", sm: "40%" }} margin={"auto"} pt="20px">
+        <Box w={{ md: "15%", sm: "40%" }} margin={"auto"} pt="20px" >
           <Text
             fontSize="25px"
             size="lg"
             align={"center"}
-            borderBottom={"3px solid lightskyblue"}
+            // borderBottom={"3px solid lightskyblue"}
             p="0.5pc"
           >
             OUR BLOGS
           </Text>
         </Box>
-        <Box w={{ md: "60%", sm: "100%" }} margin="auto">
+        <Box w={{ md: "60%", base: "100%" }} margin="auto">
           {" "}
           <Heading
-            fontSize={{ md: "65px", sm: "55px" }}
+            fontSize={{ md: "60px", sm: "50px", base: "38px" }}
             fontWeight="600px"
             align="center"
             p="1pc"
@@ -605,7 +645,8 @@ function Box1({ colorMode }) {
           w={{ lg: "80%", md: "100%" }}
           display="grid"
           margin="auto"
-          gridTemplateColumns={{ lg: "repeat(2,1fr)", md: "repeat(1,1fr)" }}
+          m="10px"
+          gridTemplateColumns={{ lg: "repeat(2,1fr)", base: "repeat(1,1fr)" }}
           gap="1pc"
         >
           {whyChooseLens.map((e, i) => {
@@ -631,16 +672,20 @@ function Box1({ colorMode }) {
           lg: "space-between",
         }}
         gap="3pc"
-        p="3pc"
+        p={{md:"3pc",base:"1pc"}}
       >
         <Box>
-          <Heading size="lg" fontSize="65px" mt="3pc">
+          <Heading size="lg" fontSize={{ md: "60px", sm: "50px", base: "38px" }} mt={{md:"3pc",base:"1pc"}}>
             Get in touch with us
           </Heading>
           <Text mt="2pc" fontSize="22px" fontWeight="400">
             Send your enquiry now!
           </Text>
-          <Box display="flex" flexDirection={{md:"row",sm:"column"}} my="2pc">
+          <Box
+            display="flex"
+            flexDirection={{ md: "row", base: "column" }}
+            my="2pc"
+          >
             <Input placeholder="Enter Email Address" border="1px solid black" />
             <Button
               borderRadius={"lg"}
@@ -663,7 +708,7 @@ function Box1({ colorMode }) {
       <Box
         display={"flex"}
         justifyContent={"space-between"}
-        flexDirection={{md:"row",sm:"column"}}
+        flexDirection={{ md: "row", base: "column" }}
         bgColor="#2A4365"
         p="2.5pc"
         color="lightgrey"
@@ -675,7 +720,7 @@ function Box1({ colorMode }) {
           Code of conduct Sustainability Goals
         </Heading>
       </Box>
-    </>
+    </Box>
   );
 }
 

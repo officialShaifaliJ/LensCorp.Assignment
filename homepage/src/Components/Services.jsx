@@ -7,10 +7,9 @@ function Services({ t1, t2, content, color, colorMode,shadowcolor }) {
   return (
     <>
       <Box
-        p="1pc"
+        p={{md:"1pc",base:"0.5pc"}}
         bgColor={`${demo}`}
         borderRadius="1.5pc"
-        className=""
         onMouseEnter={() => setMouseIn(true)}
         onMouseOut={() => setMouseIn(false)}
         _hover={{
@@ -29,14 +28,14 @@ function Services({ t1, t2, content, color, colorMode,shadowcolor }) {
           onMouseEnter={() => setMouseIn(true)}
           onMouseOut={() => setMouseIn(false)}
         >
-          <Text fontSize="80px" color={mouseIn ? color : ""}>
+          <Text fontSize={{md:"80px",base:"60px"}} color={mouseIn ? color : ""}>
             {t1}
           </Text>
           <Text
-          transitiom="ease-in-out 1s"
-          ml={mouseIn ? "1pc" : "0.5pc"}
+          transitiom="ease-in-out 2s"
+          ml={mouseIn ? "0.5pc" : "-2.5pc"}
             fontWeight="600"
-            fontSize="40px"
+            fontSize={{md:"40px",base:"30px"}}
             color={mouseIn ? "grey" : color}
           >
             {t2}
