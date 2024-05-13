@@ -645,7 +645,7 @@ function Box1({ colorMode }) {
           w={{ lg: "80%", md: "100%" }}
           display="grid"
           margin="auto"
-          m="10px"
+          p="10px"
           gridTemplateColumns={{ lg: "repeat(2,1fr)", base: "repeat(1,1fr)" }}
           gap="1pc"
         >
